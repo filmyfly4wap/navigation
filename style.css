@@ -1,0 +1,382 @@
+
+  * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+    .cnav-header-bar,
+    .cnav-drawer-menu,
+    .cnav-backdrop-overlay {
+      box-sizing: border-box;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* =================================
+   HEADER
+================================= */
+
+    .cnav-header-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      background: linear-gradient(180deg,
+          #0a1020 0%,
+          #080d18 100%);
+      border-bottom: 1px solid rgba(41, 98, 255, 0.3);
+      z-index: 99999 !important;
+      box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.65);
+    }
+
+
+    /* ==== LOGO ====*/
+
+    .cnav-logo-box {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .cnav-logo-box a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .cnav-logo-box img {
+      display: block;
+      max-height: 37px;
+      width: auto;
+      object-fit: contain;
+    }
+
+
+    /*===== HAMBURGER ====*/
+
+    .cnav-hamburger-btn {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 11px;
+      transition:
+        background 0.25s ease,
+        transform 0.2s ease;
+    }
+
+    .cnav-hamburger-btn:hover {
+      background: rgba(41, 98, 255, 0.12);
+    }
+
+    .cnav-hamburger-btn:active {
+      transform: scale(0.9);
+      background: rgba(41, 98, 255, 0.22);
+    }
+
+    .cnav-hamburger-btn svg {
+      width: 23px;
+      height: 23px;
+      fill: #ffffff;
+      transition:
+        fill 0.25s ease,
+        transform 0.25s ease;
+    }
+
+
+    .cnav-hamburger-btn:hover svg {
+      fill: #2962ff;
+    }
+
+
+    /* ====HIDDEN CHECKBOX ==== */
+
+    #mobile-nav-checkbox {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      display: none;
+    }
+
+
+    /* ==== DRAWER ====*/
+
+    .cnav-drawer-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 285px;
+      max-width: 84%;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      padding: 14px 0;
+      background: linear-gradient(180deg,
+          #111a2b 0%,
+          #0c1422 45%,
+          #0a111e 100%) !important;
+      border-right: 1px solid rgba(41, 98, 255, 0.35);
+      transform: translateX(-105%);
+      z-index: 100000 !important;
+      overflow-y: auto;
+      box-shadow:
+        12px 0 45px rgba(0, 0, 0, 0.75);
+      transition:
+        transform 0.34s cubic-bezier(0.22, 0.85, 0.3, 1);
+    }
+
+
+    /* ==== DRAWER HEADER ==== */
+
+    .cnav-drawer-head {
+      min-height: 49px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 15px 12px;
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* ==== CLOSE BUTTON ==== */
+
+    .cnav-drawer-close-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .cnav-drawer-close-btn svg {
+      width: 18px;
+      height: 18px;
+      padding: 6px;
+      background: #182235;
+      border: 1px solid #344158;
+      border-radius: 50%;
+      fill: #dbe4f0;
+      box-sizing: content-box;
+      box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.4);
+      transition: all 0.28s ease;
+    }
+
+    .cnav-drawer-close-btn:hover svg {
+      background: #2962ff;
+      border-color: #2962ff;
+      fill: #ffffff;
+      transform:
+        rotate(90deg) scale(1.05);
+      box-shadow:
+        0 0 18px rgba(41, 98, 255, 0.5);
+    }
+
+    .cnav-drawer-close-btn:active svg {
+      transform:
+        rotate(90deg) scale(0.88);
+    }
+
+
+    /* ==== MENU LIST ===== */
+
+    .cnav-link-list {
+      list-style: none;
+      margin: 0;
+      padding: 12px 9px 20px;
+    }
+
+    .cnav-link-list li {
+      list-style: none;
+      margin: 3px 0;
+    }
+
+
+    /* ===== MENU ITEM ===== */
+
+    .cnav-item-link {
+      position: relative;
+      min-height: 47px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0px 0px 0px 10px;
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      border-radius: 10px 0px 0px 10px;
+      overflow: hidden;
+      transition:
+        background 0.22s ease,
+        color 0.22s ease,
+        transform 0.22s ease;
+    }
+
+
+    /* ==== LEFT BLUE LINE ==== */
+
+.cnav-item-link::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  background: #2962ff;
+  box-shadow:
+    0 0 10px rgba(41, 98, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+
+
+    /* ==== ICON ==== */
+
+    .cnav-item-link svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      display: block;
+      fill: #2962ff;
+      transition:
+        fill 0.22s ease,
+        transform 0.22s ease;
+    }
+
+
+    /* ===== HOVER ===== */
+
+    .cnav-item-link:hover {
+      color: #ffffff;
+      background: linear-gradient(90deg,
+          rgba(41, 98, 255, 0.18),
+          rgba(41, 98, 255, 0.07));
+      transform: translateX(3px);
+
+
+    }
+    .cnav-item-link:hover::before {
+  opacity: 1;
+}
+
+    .cnav-item-link:hover svg {
+      fill: #ffffff;
+
+      transform: scale(1.1);
+    }
+
+
+    /* ==== ACTIVE / TOUCH ===== */
+
+    .cnav-item-link:active {
+      background:
+        rgba(41, 98, 255, 0.22);
+      transform: scale(0.98);
+    }
+
+
+    /* ===== BACKDROP ===== */
+
+    .cnav-backdrop-overlay {
+      position: fixed;
+      inset: 0;
+      background:
+        rgba(2, 6, 18, 0.76);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 99998 !important;
+      transition:
+        opacity 0.3s ease;
+    }
+
+
+    /* ===== OPEN DRAWER ==== */
+
+    #mobile-nav-checkbox:checked~.cnav-drawer-menu {
+      transform: translateX(0);
+    }
+
+    #mobile-nav-checkbox:checked~.cnav-backdrop-overlay {
+      opacity: 1;
+
+      pointer-events: auto;
+    }
+
+
+    /* ====== SCROLL BAR ===== */
+
+    .cnav-drawer-menu::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .cnav-drawer-menu::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .cnav-drawer-menu::-webkit-scrollbar-thumb {
+      background: #263449;
+
+      border-radius: 10px;
+    }
+
+    .cnav-drawer-menu::-webkit-scrollbar-thumb:hover {
+      background: #2962ff;
+    }
+
+
+    /* ==== MOBILE ===== */
+
+    @media (max-width: 480px) {
+
+      .cnav-header-bar {
+        height: 54px;
+        padding: 0 13px;
+      }
+
+      .cnav-drawer-menu {
+        width: 280px;
+        max-width: 87%;
+      }
+
+      .cnav-item-link {
+        min-height: 46px;
+        font-size: 14px;
+      }
+    }
+  
